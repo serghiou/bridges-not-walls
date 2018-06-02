@@ -1,0 +1,76 @@
+% Document class
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry} 
+\usepackage{a4wide, amsthm, amsmath, amssymb, graphicx, hyperref, bbm}
+\usepackage{ragged2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}       % For writing code
+\usepackage{minted}         % For colouring code
+\usepackage{array}          % For making more flexible tables
+
+% Optional packages
+%\usepackage[utf8x]{inputenc}
+%\usepackage{lipsum}
+
+% New commands
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\soft}{\text{softmax}}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+% Set features 
+% (include them within {} for them to only apply within a section of the document)
+\lstset{language=Python}          % Set coding language (can change for each code-block)
+\setlength{\parindent}{0pt}       % This is to avoid indentation of new paragraphs
+\renewcommand{\arraystretch}{1.5} % Increase line spacing for all tables
+
+% Environments
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+Reproducibility crisis: let’s build bridges, not walls
+Introduction
+Science represents our attempt to learn about the physical world, us humans – as physical, social and psychological entities – and our systems of interaction. Different fields of science face different threats to validity and thus they benefit from different approaches to improving the efficiency of knowledge production. In fields such as medicine, the signal to noise ratio is often so small and our ability to perturb the system so limited that inferences can be much more uncertain and much more nebulous than fields such as computer science. This essay examines how we can possibly optimize how research is done in terms of cost-benefit within the biological sciences.
+Cost refers to the amount of investment devoted to science and benefit refers to the amount of true discoveries weighted by their perceived importance; in this essay importance is understood in terms of money saved and money invested in further research or translation secondary to true discoveries. Over the past fifteen years, several studies have questioned our ability to produce true discoveries (Ioannidis, 2005) and have illustrated that almost 85% of investment in biomedical research is “wasted” in producing discoveries that are most likely false (Macleod et al., 2014). The conclusions of these studies have been emboldened by recent reproducibility projects (Prinz et al., 2011; Begley and Ellis, 2012; OSC, 2015), which has led to what is referred to as the “reproducibility crisis” (refer to supplementary material for a more comprehensive discussion of such empirical assessments).
+Reproducibility has previously been defined by the National Science Foundation (NSF) as “the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.” It was then further categorized into “methods reproducibility” (to reproduce the methods of a paper), “results reproducibility” (to reproduce the results of a paper using its methods) and “inferential reproducibility” (to reproduce the inferences of a paper using our new results) (Goodman et al., 2016). 
+Our apparent inability to reproduce such landmark studies to an even close to universally accepted level, is not inconsequential. Some or most of these landmark studies, have been the basis of  further investments of millions of dollars into further research and translational efforts, including early-phase randomized-controlled trials (RCTs) (citation). This begs the question, could we have done things differently? Can we, in the future, produce important new discoveries more efficiently using an improved cost-benefit profile? There seem to be two opposing camps. 
+The first camp suggests that we need more reproducibility efforts and that a serious amount of yearly biomedical research funding should be allocated to such efforts. This recommendation makes sense because of the extent of irreproducible research identified by theoretical and empirical studies, themselves corroborated by the amount of known lack of rigorous scientific practice (e.g. lack of randomization, lack of blinding, lack of power calculations, multiple testing, hypothesizing after results are known, etc.). However, scientists have rightfully argued that this would redirect investment away from new potentially life-saving discoveries and that replication work may not itself be as prestigious as “discovery”-oriented work. 
+The second camp suggests that science is self-correcting, we do not need to re-organize how science is done and more reproducibility efforts would simply stifle innovation. This camp indeed argues that over the past century we have been able to make remarkable leaps in our understanding of the human organism and how to treat it and that many false fields of research (such as phrenology) have been identified and made obsolete. However, studies have shown that only 1% of promised discoveries have actually led to a clinical change over the past 25 years (Ioannidis citation) and that most improvements in health may be secondary to antibiotics and improvements in public health (citation); they also argue that science is self-correcting (citation), but we could help it correct faster. 
+Even though empirical analyses of the state of science are quite convincing in suggesting that a much larger proportion than what we initially thought is non-reproducible, which could in this context be categorized as a “crisis”, we simply do not know enough about how we learn to suggest how much money should be redirected away from discovery-oriented research towards supplementary research. We need to think how many studies to replicate, how to prioritize which studies to replicate in order to balance value of information with investment, how often they should be replicated and by whom. ? Should we be selecting for specific studies – high-impact studies will cause an “outbreak” of a lot more studies than less impactful studies – should we prioritize supplementing them? Such research is simply not available at the moment and funding bodies have unfortunately not attempted, as far as I know, to empirically experiment with varying methods of organizing research. Nevertheless, while waiting for that research, there are important agreements between the two aforementioned camps that should not be glossed over.
+They primarily agree that science can only benefit from openly available data. Online repositories now allow researchers to upload all of their data and give them a DOI; as such, if a researcher is interested in using that data they can freely access it online and creators of that data can gain recognition through their citation. They also agree that we need more transparency in methods. At the moment, much of what is publish is difficult to reproduce because the methods and protocols made available are not detailed enough – researchers have to fill in the gaps, which means that if an experiment does not work as expected they cannot know whether this was because of them not following the appropriate protocol or because of the initial estimate of effect being inaccurate. This is in fact of paramount importance and why all replications should be true, rather than conceptual replications.
+True replications refer to actually using the exact methods previously used to reproduce an experiment, versus conceptual methods that only use its spirit (citation). Using such methods (1) would defeat any arguments that the effect obtained in the follow-up study may not be similar to previous because of changes in protocol, (2) would immediately make their work publishable as a replication study, (3) would serve as an opportunity to learn about previously unknown variables that may have caused discrepancies between the two attempts at the same experiments and (4) would mean that the data from the follow-up study can be combined to those of the previous study to improve our current estimate of effect. Replications in fact happen all the time in the lab, but these are never used to inform our true estimates of effect – as such, we miss spectacularly important opportunities to improve our current estimate of effect and make sure that no other labs spend time working on experiments that may not in fact be informative. Part of the problem and the reason no such attempts are currently published is because we still believe in the p-value a lot more than the effect.
+We need to redirect our attention from the p-value to the effect size. Research is about discovery of associational knowledge and knowledge has a direction (e.g. A causes B) and magnitude (e.g. A makes B twice as likely). The direction is in fact an attribute of the magnitude, not vice versa, and as such, having an accurate and precise estimate of magnitude is very important. Such accurate and precise estimates can only happen with more numbers and bigger sample sizes – as per the strong law of large numbers, we can approach the true estimate of effect with perfect probability with increasing sample size. This has been a difficult concept to grasp because there is no natural way to supplement current experimental data with future experimental data within the frequentist framework of thought and statistics. This is why we need to start embracing the Bayesian way.
+Within the Bayesian framework, original research works towards producing an initial estimate of effect and an initial probability of a hypothesis being true; this is known as the prior probability. Then, it provides the machinery required so that additional experiments offering more estimates of effect can be used to update our initial probability; this is known as the posterior probability. The process can continue until we feel confident enough in our hypothesis and estimate of effect. This way, the Bayesian framework adds further meaning to replication work, because it now becomes a practice away from a sterile and often ambiguous “yes, reproduced” or “no, not reproduced” conclusion and towards a more informative estimate of effect. It is no longer about right or wrong, true or false, but about degrees of information: less or more informative. As such, the Bayesian framework offers a natural way to assimilate information by combining each subsequent experiment to previous experiments.
+Indeed, using the Bayesian framework we can utilize replications to bridge our current study with previous studies. Instead of each study being a discrete fragment of evidence towards or away from a hypothesis, we now have a framework in which all of these evidence can be numerically combined with each other to estimate an accurate probability of our hypotheses being true or not. It also provides a way to standardize results of each subsequent study with results of a previous study – if a lab was not able to observe an effect observed by the original study, then it is quite likely that other effects they observed may not be observable by the original study authors due to a hidden variable; the same applies in observing an augmented or attenuated effect; observation of similar effects, adds credibility and a way to compare the results of the two. If labs are not keen on using the Bayesian framework that is fine, but certain others may be keen to do so and all labs making all of their raw results available will help the research community establish this symbiotic work ethic.
+All in all, I fervently believe that we need a paradigm shift in how we plan, conceptualize and execute research. We need more theoretical research in the value of information and more empirical research of the effect of different structures of incentives and ways of organizing research. However, in the meanwhile, let us maximize and double down on what we do know. Making all of our data available, all of our methods available and publishing replication studies that we already work on will fundamentally improve our ability to learn. Researchers can then utilize these information and, within a Bayesian framework, synthesize it into a unified and meaningful body of knowledge. Eventually, let’s hope that such a shift will also shift our mentality and way of thinking towards that of estimating the true effect. Let us build more bridges between studies and across the current walls – it is to the benefit of all of us, and primarily of humanity.
+Box summary of 10 recommendations: (1) more theoretical and empirical research in the optimal way to balance breadth (i.e. discovery) vs depth (i.e. supplementation)-oriented research (2) replace conceptual replications by true replications, (3) make a lot of the dark data of replications or attempted replications available to all, (4) redirect our attention from the p-value to the effect size, (5) use Bayesian statistics to combine our new estimates of effect to previous estimates of effect, (6) use Bayesian statistics to enhance the scientific merit of supplementation work, (7) utilize replications to bridge our current study to previous studies, (8) utilize replications to make new discoveries (we do not know everything, we cannot control for everything, our results are stochastic, we need to recognize that to do that we need our research done by someone else), (9) make our data available so that those interested in this kind of thing can do it, (10) formally study what amount of replication is optimal.
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
